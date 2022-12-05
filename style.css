@@ -1,0 +1,64 @@
+body
+{
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+td
+{
+    color: black;
+    border-style: groove;
+    background-color: aliceblue;
+    border-radius: 5pt;
+    font-family: cursive;
+    font-size: 15pt;
+}
+.table1
+{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 300px;
+}
+.table1b
+{
+    margin-left: 30px;
+    margin-top: 30px;
+}
+#td
+{ 
+    text-align: center; 
+    border-style: groove; 
+    width: 35px;
+    height: 35px;
+    border-radius: 5pt;
+    font-family: cursive;
+    font-size: 15pt;
+}
+.div
+{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 300px;
+    border-style: groove;
+    border-radius: 5pt;
+    height: 50;
+    font-family: cursive;
+    font-size: 30pt;
+    background-color: aliceblue;
+}
+.td3
+{
+    width: 250px;
+    height: 50px;
+    font-size: 30pt;
+}
+.td3b
+{
+    width: 50px;
+    height: 50px;
+    font-size: 30pt;
+}
+.td
+{
+    height: 50px;
+    font-size: 30pt;
+}
+

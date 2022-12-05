@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta</title>
+    <style>
+        #tab
+        {
+            border-style: groove;
+            border-width: 4px;
+            background-color: aliceblue;
+        }
+        body
+        {
+            background-color: rgb(211, 234, 255);
+            font-family: cursive;
+            font-size: 15pt;
+        }
+        input
+        {
+            height:30px;
+            width: 300px;
+            border-radius: 5pt;
+            border-style: groove;
+        }
+        input[type="button"]
+        {
+            height:30px;
+            width: 140px;
+            border-radius: 5pt;
+            border-style: groove;
+            font-size: 14pt;
+        }
+    </style>
+
+    <script language="javascript">
+        function q1a()
+        {
+            var texto, i;
+            texto = document.getElementById("nome").value;
+
+            document.write("<html><head><link rel='stylesheet' href='style.css'></head><body><table class='table1'><tr>");
+
+            for (i = 0; i < texto.length; i++)
+            {
+                document.write("<td id='td'>" + texto.charAt(i) + "</td>");
+                
+            }
+
+            document.write("</tr></table></body></html>");
+        }
+
+        function q1b()
+        {
+            var texto, i;
+            texto = document.getElementById("nome").value;
+
+            document.write("<html><head><link rel='stylesheet' href='style.css'></head><body><table class='table1b'>");
+
+            for (i = 0; i < texto.length; i++)
+            {
+                document.write("<tr><td id='td'>" + texto.charAt(i) + "</td></tr>");
+            }
+
+            document.write("</body></table>");
+        }
+
+        function q2()
+        {
+            var char, int, i;
+            char = document.getElementById("char").value;
+            int = document.getElementById("int").value;
+            document.write("<html><head><link rel='stylesheet' href='style.css'></head><body><table class='div'><tr><td>")
+            for (i = 0; i < int; i++)
+            {
+                document.write(char);
+            }
+            document.write("</tr></td></body></html>")
+
+        }
+
+        function q3()
+        {
+            var texto, i, vo = 0, co = 0, di = 0, ou = 0;
+            texto = document.getElementById("nome").value;
+            texto = texto.toLowerCase();
+
+            for (i = 0; i < texto.length; i++)
+            {
+                if (texto.charAt(i) == "a" || texto.charAt(i) == "e" || texto.charAt(i) == "i" || texto.charAt(i) == "o" || texto.charAt(i) == "u")
+                {
+                    vo++;
+                }else if (texto.charCodeAt(i) >= 97 && texto.charCodeAt(i) <= 122)
+                    {
+                        co++;
+                    }else if (texto.charCodeAt(i) >= 48 && texto.charCodeAt(i) <= 57)
+                        {
+                            di++;
+                        }else
+                            {
+                                ou++
+                            }
+            }
+            document.write("<html><head><link rel='stylesheet' href='style.css'></head><body><table class='table1'><tr><td class ='td3'>Vogais</td><td class ='td3b'>" + vo + "</td></tr>")
+            document.write("<tr><td class ='td3'>Consoantes</td><td class ='td3b'>" + co + "</td></tr>")
+            document.write("<tr><td class ='td3'>Dígitos</td><td class ='td3b'>" + di + "</td></tr>")
+            document.write("<tr><td class ='td3'>Outros</td><td class ='td3b'>" + ou + "</td></tr></table></body></html>")
+
+        }
+
+        function q4()
+        {
+            var texto, i, a = "", b, trocado = "";
+            texto = document.getElementById("nome").value;
+            texto = texto.toLowerCase();
+
+            for (i = texto.length; i >= 0; i--)
+            {
+                if (i == 0)
+                {
+                    a = texto.substring(i, texto.length) + a;
+                    
+                }else if (texto.charCodeAt(i) < 97 || texto.charCodeAt(i) > 122)
+                    {
+                        a = texto.substring((i + 1), texto.length) + a;
+                        b = texto.substring(0, i);
+                        texto = b;
+                    }
+                    
+            }
+            document.write("<html><head><link rel='stylesheet' href='style.css'></head><body><table class='table1'><tr><td class='td3'>" + a + "</td></tr>");
+
+            for (i = a.length; i >= 0; i--)
+            {
+                trocado += a.charAt(i);
+            }
+            document.write("<tr><td class='td3'>" + trocado + "</td></tr>");
+
+            if (a === trocado)
+            {
+                document.write("<tr><td class='td3'>É um palíndromo</td></tr>");
+            }else
+                {
+                    document.write("<tr><td class='td3'>Não é um palíndromo</td></tr>");
+                }
+            
+
+        }
+
+        function q5()
+        {
+            var texto, numAux, aux1, aux2;
+            texto = document.getElementById("nome").value;
+            numAux = texto.lastIndexOf(" ");
+            aux1 = texto.substring(numAux, texto.length) + ", ";
+            aux2 = texto.substring(0, numAux);
+            document.write("<html><head><link rel='stylesheet' href='style.css'></head><body><table class='table1'><tr><td class='td'>" + aux1.concat(aux2) + "</td></tr></body></html>");
+
+        }
+        function q6()
+        {
+            var texto, numAux, numAux2, aux1, aux2, b, i, a;
+            texto = document.getElementById("nome").value;
+            numAux = texto.lastIndexOf(" ");
+            aux1 = texto.substring(numAux, texto.length) + ", ";
+            b = aux1.toUpperCase();
+            numAux2 = texto.indexOf(" ");
+            aux2 = texto.substring(0, numAux2);
+            b += aux2 + " ";
+
+            for (i = numAux2; i <= numAux; i++)
+            {
+                if (texto.charCodeAt(i) >= 65 && texto.charCodeAt(i) <= 90)
+                {
+                    a = texto.charAt(i);
+                    b += a + ". ";
+                }
+            }
+            document.write("<html><head><link rel='stylesheet' href='style.css'></head><body><table class='table1'><tr><td class='td'>" + b + "</td></tr></body></html>");
+            
+            
+        }
+
+    </script>
+</head>
+<body>
+    <form name="form"> 
+        Texto: <input type="text" value="Digite Algo Serumaninho" id="nome"/>
+        <br>
+        Caracter: <input type="text" value="*" id="char"/>
+        <br>
+        Nº Inteiro: <input type="text" value="1" id="int"/>
+        <br><br>
+
+        <input type="button" value="Questão 1 - a)" onclick="q1a();"><br>
+        <input type="button" value="Questão 1 - b)" onclick="q1b();"><br>
+        <input type="button" value="Questão 2" onclick="q2();"><br>
+        <input type="button" value="Questão 3" onclick="q3();"><br>
+        <input type="button" value="Questão 4" onclick="q4();"><br>
+        <input type="button" value="Questão 5" onclick="q5();"><br>
+        <input type="button" value="Questão 6" onclick="q6();">
+    </form>
+</body>
+</html>
